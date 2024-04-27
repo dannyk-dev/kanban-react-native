@@ -1,19 +1,34 @@
-import { StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet, ViewStyle, useColorScheme } from "react-native";
 import React, { PropsWithChildren } from "react";
 import Colors from "../constants/Colors";
 import { View } from "./Themed";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Container = ({ children }: PropsWithChildren) => {
+type ContainerProps = {
+  rootContainerStyle?: ViewStyle | undefined;
+  primaryContainerStyle?: ViewStyle | undefined;
+} & PropsWithChildren;
+
+const Container = ({
+  rootContainerStyle,
+  primaryContainerStyle,
+  children,
+}: ContainerProps) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme ?? "light"];
 
   return (
     <SafeAreaView>
       <View
-        style={[styles.container, { backgroundColor: theme.tabBarBackground }]}
+        style={[
+          styles.container,
+          rootContainerStyle,
+          { backgroundColor: theme.tabBarBackground },
+        ]}
       >
-        <View style={styles.bgOverlay}>{children}</View>
+        <View style={[styles.bgOverlay, primaryContainerStyle]}>
+          {children}
+        </View>
       </View>
     </SafeAreaView>
   );

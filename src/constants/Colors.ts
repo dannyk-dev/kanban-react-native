@@ -1,35 +1,27 @@
-const tintColorLight = '#7E78D2';
+const tintColorLight = "#7E78D2";
 // const tintColorLight = '#D9EFFC';
-const tintColorDark = '#A7A3E0';
+const tintColorDark = "#A7A3E0";
 
-const primaryDark = "#3E3F3B"
+const primaryDark = "#3E3F3B";
 
 export default {
   light: {
-    text: '#3E3F3B',
+    text: "#3E3F3B",
     // background: '#F7FFF7',
-    background: '#8AA29E',
-    backgroundPrimary: '#E3F2FD',
+    background: "#8AA29E",
+    backgroundPrimary: "#E3F2FD",
     tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: '#D9EFFC',
-    tabBarBackground: '#232323',
-    gradient: ['#4c669f', '#3b5998', '#192f6a']
+    tabIconDefault: "#ccc",
+    tabIconSelected: "#D9EFFC",
+    tabBarBackground: "#364542",
   },
   dark: {
-    text: '#FAFAFA',
-    background: '#8AA29E',
+    text: "#FAFAFA",
+    background: "#8AA29E",
     backgroundPrimary: primaryDark,
     tint: tintColorDark,
-    tabIconDefault: '#ccc',
+    tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
-    tabBarBackground: '#364542',
-    gradient: ['rgba(61,245,167,1)', 'rgba(9,111,224,1)']
+    tabBarBackground: "#232323",
   },
 };
-
-
-// background-image: ;
-
-
-// background-image: radial-gradient( circle farthest-corner at 10% 20%,   0%,  90% );

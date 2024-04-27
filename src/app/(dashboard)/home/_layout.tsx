@@ -13,11 +13,14 @@ const HomeStack = () => {
       <Stack.Screen
         name="index"
         options={{
-          title: "Your Tasks",
+          title: "persona.io",
           headerShown: true,
           headerTransparent: true,
-          headerTitleAlign: "center",
-          headerTitleStyle: { fontSize: 24, fontWeight: "500" },
+          headerTitleStyle: {
+            fontSize: 24,
+            fontWeight: "500",
+            color: theme.tabIconSelected,
+          },
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
