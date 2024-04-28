@@ -10,8 +10,13 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 import { useColorScheme } from "@/src/components/useColorScheme";
-import * as SystemUI from "expo-system-ui";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import {
+  Montserrat_400Regular,
+  Montserrat_600SemiBold,
+  Nunito_400Regular,
+  Nunito_600SemiBold,
+} from "@expo-google-fonts/dev";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -28,6 +33,10 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_600SemiBold,
+    Nunito_400Regular,
+    Nunito_600SemiBold,
     SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
   });

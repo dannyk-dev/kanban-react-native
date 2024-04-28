@@ -31,6 +31,9 @@ const Badge = ({
             {
               translateY: side === "top" ? -5 : 5,
             },
+            {
+              translateX: 2,
+            },
           ],
         },
       ]}
@@ -40,7 +43,7 @@ const Badge = ({
           badgeItemStyle,
           styles.badgeText,
           {
-            color: theme.text,
+            color: theme.tabIconSelected,
           },
         ]}
       >
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   badgeText: {
-    fontSize: 14,
+    fontSize: 12,
     textAlign: "center",
   },
 });

@@ -3,7 +3,6 @@ import { Platform, StyleSheet } from "react-native";
 
 import EditScreenInfo from "@/src/components/EditScreenInfo";
 import { Text, View } from "@/src/components/Themed";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function ModalScreen() {
   return (

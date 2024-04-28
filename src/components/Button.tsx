@@ -1,17 +1,32 @@
-import { Pressable, StyleSheet, Text, TextStyle, View } from "react-native";
+import {
+  Pressable,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  View,
+} from "react-native";
 import { forwardRef } from "react";
 import useTheme from "../hooks/useTheme";
+import { Text } from "./Themed";
 
 type ButtonProps = {
   text: string;
   ghost?: boolean;
-  contentStyle?: TextStyle | undefined;
+  contentStyle?: StyleProp<TextStyle> | undefined;
   size?: "sm" | "normal";
+  bg?: string;
 } & React.ComponentPropsWithoutRef<typeof Pressable>;
 
 const Button = forwardRef<View | null, ButtonProps>(
   (
-    { text, ghost = false, contentStyle, size = "normal", ...pressableProps },
+    {
+      text,
+      ghost = false,
+      contentStyle,
+      size = "normal",
+      bg,
+      ...pressableProps
+    },
     ref
   ) => {
     const theme = useTheme();
@@ -23,17 +38,18 @@ const Button = forwardRef<View | null, ButtonProps>(
         style={[
           styles.container,
           {
-            backgroundColor: !ghost ? theme.tint : "transparent",
-            borderColor: theme.tint,
-            borderWidth: 2,
-            paddingVertical: size === "normal" ? 15 : 5,
-            paddingHorizontal: size === "normal" ? 30 : 15,
+            backgroundColor: !ghost ? bg ?? theme.tint : "transparent",
+            borderColor: bg ?? theme.tint,
+            borderWidth: 1,
+            paddingVertical: size === "normal" ? 15 : 8,
+            paddingHorizontal: size === "normal" ? 30 : 24,
             marginRight: size === "sm" ? 5 : 0,
           },
         ]}
       >
         <Text
-          style={[styles.text, contentStyle, { color: theme.tabIconSelected }]}
+          style={[styles.text, { color: theme.tabIconSelected }, contentStyle]}
+          // fontFamily="Nunito_400Regular"
         >
           {text}
         </Text>

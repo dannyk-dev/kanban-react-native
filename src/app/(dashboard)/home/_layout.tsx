@@ -19,7 +19,7 @@ const HomeStack = () => {
           headerTitleStyle: {
             fontSize: 24,
             fontWeight: "500",
-            color: theme.tabIconSelected,
+            color: theme.text,
           },
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -29,7 +29,7 @@ const HomeStack = () => {
                     <FontAwesome
                       name="bell"
                       size={25}
-                      color={theme.tabIconDefault}
+                      color={theme.tabIconSelected}
                       style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                       children={<Badge value={4} side="bottom" />}
                     />
