@@ -17,6 +17,7 @@ import {
   Nunito_400Regular,
   Nunito_600SemiBold,
 } from "@expo-google-fonts/dev";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -63,20 +64,22 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
+    // <GestureHandlerRootView>
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <SafeAreaProvider>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="(dashboard)"
-            options={{ headerShown: false, headerTransparent: true }}
-          />
-          <Stack.Screen
-            name="modal"
-            options={{ presentation: "modal", headerTransparent: true }}
-          />
-        </Stack>
-      </SafeAreaProvider>
+      {/* <GestureHandlerRootView> */}
+      {/* <SafeAreaProvider> */}
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="(dashboard)"
+          options={{ headerShown: false, headerTransparent: true }}
+        />
+        <Stack.Screen
+          name="modal"
+          options={{ presentation: "modal", headerTransparent: true }}
+        />
+      </Stack>
     </ThemeProvider>
+    // </GestureHandlerRootView>
   );
 }

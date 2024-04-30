@@ -18,19 +18,17 @@ const Container = ({
   const theme = Colors[colorScheme ?? "light"];
 
   return (
-    <SafeAreaView>
-      <View
-        style={[
-          styles.container,
-          rootContainerStyle,
-          { backgroundColor: theme.tabBarBackground },
-        ]}
-      >
-        <View style={[styles.bgOverlay, primaryContainerStyle]}>
-          {children}
-        </View>
-      </View>
-    </SafeAreaView>
+    // <SafeAreaView>
+    <View
+      style={[
+        styles.container,
+        rootContainerStyle,
+        { backgroundColor: theme.tabBarBackground },
+      ]}
+    >
+      <View style={[styles.bgOverlay, primaryContainerStyle]}>{children}</View>
+    </View>
+    // </SafeAreaView>
   );
 };
 
@@ -49,5 +47,7 @@ const styles = StyleSheet.create({
     width: "100%",
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
+    paddingBottom: 5,
+    // backgroundColor: "pink",
   },
 });

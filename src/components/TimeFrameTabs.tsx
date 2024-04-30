@@ -30,13 +30,16 @@ const TimeFrameTabs = ({
             styles.btnText,
             {
               color:
-                filter === activeFilter ? theme.tabIconSelected : theme.text,
+                filter === activeFilter
+                  ? theme.tabIconSelected
+                  : theme.tabBarBackground,
             },
           ]}
           size="sm"
           ghost={filter !== activeFilter}
           onPress={() => setActiveFilter(filter)}
           key={filter}
+          bg={theme.tabBarBackground}
         />
       ))}
     </View>

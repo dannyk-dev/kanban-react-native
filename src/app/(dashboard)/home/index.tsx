@@ -8,6 +8,9 @@ import React, { useState } from "react";
 import Clock from "@/src/components/Clock";
 import { TimeDataFilters } from "@/src/types";
 import TimeFrameTabs from "@/src/components/TimeFrameTabs";
+import TaskSheet from "@/src/components/TaskSheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import BottomSheetScrollview from "@/src/components/BottomSheetScrollview";
 
 dayjs.extend(relativeTime);
 dayjs.locale("br");
@@ -16,18 +19,26 @@ const HomeScreen = () => {
   const [timeFilter, setTimeFilter] = useState<TimeDataFilters>("today");
 
   return (
-    <Container
-      primaryContainerStyle={{
-        justifyContent: "space-around",
-        paddingLeft: 15,
-      }}
-    >
-      <TimeFrameTabs
-        activeFilter={timeFilter}
-        setActiveFilter={setTimeFilter}
-      />
-      <Clock />
-    </Container>
+    <GestureHandlerRootView>
+      <Container
+        primaryContainerStyle={{
+          justifyContent: "center",
+          position: "relative",
+          width: "100%",
+          // paddingLeft: 15,
+        }}
+      >
+        <View style={styles.contentContainer}>
+          <Clock />
+          <TimeFrameTabs
+            activeFilter={timeFilter}
+            setActiveFilter={setTimeFilter}
+          />
+          {/* <BottomSheetScrollview /> */}
+          <TaskSheet />
+        </View>
+      </Container>
+    </GestureHandlerRootView>
   );
 };
 
@@ -37,6 +48,19 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+  },
+  contentContainer: {
+    height: "auto",
+    marginTop: 75,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    backgroundColor: "transparent",
+    rowGap: 10,
+    paddingLeft: 10,
+    paddingBottom: 16,
+    borderRadius: 40,
+    overflow: "hidden",
   },
   separator: {
     marginVertical: 30,

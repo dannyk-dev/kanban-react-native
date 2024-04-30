@@ -14,7 +14,7 @@ const Clock = () => {
           Tuesday
         </Text>
         <Text
-          style={[styles.date, { color: theme.text }]}
+          style={[styles.date, { color: theme.tabBarBackground }]}
           fontFamily="Montserrat_600SemiBold"
         >
           13.12 Dec
@@ -27,8 +27,8 @@ const Clock = () => {
           <Text fontFamily="Montserrat_400Regular">New York</Text>
         </View>
         <View>
-          <Text>23 Degrees Celcius</Text>
-          <Text>Partly Cloudy</Text>
+          <Text fontFamily="Montserrat_600SemiBold">23 Degrees Celcius</Text>
+          <Text fontFamily="Montserrat_400Regular">Partly Cloudy</Text>
         </View>
       </View>
     </View>
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 56,
+    textAlign: "left",
     textTransform: "uppercase",
   },
   separator: {
